@@ -1,0 +1,45 @@
+{
+    "model": {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:fireworks",
+        "value": {
+            "explosions": {
+                "size": 0
+            }
+        },
+        "on_true": {
+            "type": "minecraft:condition",
+            "property": "minecraft:component",
+            "predicate": "minecraft:fireworks",
+            "value": {
+                "flight_duration": 1
+            },
+            "on_true": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/firework_rocket/flight_duration_1"
+            },            
+            "on_false": {
+                "type": "minecraft:condition",
+                "property": "minecraft:component",
+                "predicate": "minecraft:fireworks",
+                "value": {
+                    "flight_duration": 2
+                },
+                "on_true": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/firework_rocket/flight_duration_2"
+                },
+                "on_false": {
+                    "type": "minecraft:model",
+                    "model": "minecraft:item/firework_rocket/flight_duration_3"
+                }
+            }
+        },
+        "on_false": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/firework_rocket/explosion"
+        }
+    }
+    
+}
